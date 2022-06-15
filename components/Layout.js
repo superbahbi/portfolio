@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
         xlinkHref="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"
-        shape-rendering="auto"
+        shapeRendering="auto"
       >
         <defs>
           <path
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
           <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
       </svg>
-      <div class="content flex">
+      <div className="content flex">
         <p>About me </p>
       </div>
       <Footer />
