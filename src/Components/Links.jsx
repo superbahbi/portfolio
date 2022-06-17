@@ -1,55 +1,87 @@
 import React from "react";
 import styled from "styled-components";
-import { Grid, GridItem, Center } from "@chakra-ui/react";
-const Container = styled.div`
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
+import { Grid, GridItem, Center, Link, Box, HStack } from "@chakra-ui/react";
+const Container = styled(Grid)`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 2rem;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    a {
+      padding-bottom: 1rem;
+    }
+  }
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  // text-align: center;
   a {
     padding-left: 1rem;
   }
 `;
 const Links = ({ email, linkedin, resume }) => {
   return (
-    <Grid templateColumns="repeat(3, 1fr)" pt={10}>
+    <Container>
       <GridItem>
         <Center>
-          <a href={`mailto:${email}`}>
-            <img
-              src={`https://img.shields.io/badge/${email}-326789?style=for-the-badge&logo=gmail&logoColor=white`}
-              height="27"
-              target="_blank"
-              alt="link to my email"
-            />
-          </a>
+          <Link href={`mailto:${email}`}>
+            <Box
+              as="button"
+              borderRadius="md"
+              bg="brand.600"
+              color="white"
+              px={4}
+              h={8}
+            >
+              <HStack>
+                <Box as={TbBrandGmail} fontSize="2xl" />
+                <Box>{email.toUpperCase()}</Box>
+              </HStack>
+            </Box>
+          </Link>
         </Center>
       </GridItem>
       <GridItem>
         <Center>
-          <a href={`https://www.linkedin.com/in/${linkedin}/`}>
-            <img
-              src={`https://img.shields.io/badge/${linkedin}-326789?style=for-the-badge&logo=linkedin&logoColor=white_`}
-              height="27"
-              target="_blank"
-              alt="link to my linkedin"
-            />
-          </a>
+          <Link href={`https://www.linkedin.com/in/${linkedin}/`}>
+            <Box
+              as="button"
+              borderRadius="md"
+              bg="brand.600"
+              color="white"
+              px={4}
+              h={8}
+            >
+              <HStack>
+                <Box as={TbBrandLinkedin} fontSize="2xl" />
+                <Box>{linkedin.toUpperCase()}</Box>
+              </HStack>
+            </Box>
+          </Link>
         </Center>
       </GridItem>
       <GridItem>
         <Center>
-          <a href={resume}>
-            <img
-              src="https://img.shields.io/badge/Download_Resume-326789?style=for-the-badge&logo=googledrive&logoColor=white"
-              height="27"
-              target="_blank"
-              alt="link to my resume"
-            />
-          </a>
+          <Link href={resume}>
+            <Box
+              as="button"
+              borderRadius="md"
+              bg="brand.600"
+              color="white"
+              px={4}
+              h={8}
+            >
+              <HStack>
+                <Box as={TbCloudDownload} fontSize="2xl" />
+                <Box>{"download resume".toUpperCase()}</Box>
+              </HStack>
+            </Box>
+          </Link>
         </Center>
       </GridItem>
-    </Grid>
+    </Container>
   );
 };
 
