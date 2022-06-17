@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Center, Text, Link } from "@chakra-ui/react";
+import { Box, Image, Center, Link } from "@chakra-ui/react";
 
 const ProjectBox = ({
   projectImg,
@@ -10,7 +10,12 @@ const ProjectBox = ({
   codeLink,
 }) => {
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" background="brand.700">
+    <Box
+      maxW="22rem"
+      borderWidth="1px"
+      borderRadius="lg"
+      background="brand.700"
+    >
       <Image borderRadius="lg" src={projectImg} alt="Twitter Clone Web" />
       <Box p="6">
         <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight">

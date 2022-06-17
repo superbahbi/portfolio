@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 const Container = styled.div`
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: ${(props) => props.backgroundColor};
   height: ${(props) => props.height};
   color: #000;
