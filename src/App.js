@@ -45,7 +45,11 @@ function App() {
             <Text fontSize="2xl">Full Stack Software Engineer</Text>
           </Stack>
         </InnerHeader>
-        <WavesAnimation animation lines={4} />
+        <WavesAnimation
+          animation
+          waves={[0, 3, 5, 7]}
+          wavesOpacity={[0.7, 0.5, 0.3, 1]}
+        />
         <Content backgroundColor="rgba(233, 238, 242, 1)">
           <Box maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="2xl">
