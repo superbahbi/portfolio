@@ -19,7 +19,7 @@ const WaveSVG = styled.svg`
   /*Fix for safari gap*/
   min-height: 100px;
   max-height: 150px;
-
+  background-color: ${(props) => props.backgroundColor};
   /* Animation */
   .parallax > use {
     animation: ${(props) =>
@@ -50,6 +50,10 @@ const WaveSVG = styled.svg`
     animation-delay: -5s;
     animation-duration: 20s;
   }
+  .parallax > use:nth-child(5) {
+    animation-delay: -6s;
+    animation-duration: 27s;
+  }
 
   /*Shrinking for mobile*/
   @media (max-width: 768px) {
@@ -60,38 +64,47 @@ const WaveSVG = styled.svg`
   }
 `;
 
-const WavesAnimation = ({ animation, waves, wavesOpacity }) => {
-  let useArr = waves.map((x, i) => {
+const Waves = ({
+  animation,
+  waves,
+  wavesOpacity,
+  data,
+  waveColor,
+  backgroundColor,
+  viewBox,
+}) => {
+  let useArr = waves?.map((x, i) => {
     return (
       <use
         key={i}
         xlinkHref="#gentle-wave"
-        x="48"
-        y={waves[i]}
-        fill={`rgba(233,238,242,${wavesOpacity[i]})`}
+        x={waves && "48"}
+        y={waves && waves[i]}
+        fillOpacity={wavesOpacity[i]}
+        fill={waveColor}
       ></use>
     );
   });
   return (
     <WaveSVG
-      id="w"
       animation={animation}
+      backgroundColor={backgroundColor}
       xmlns="http://www.w3.org/2000/svg"
       xlinkHref="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28"
+      viewBox={viewBox}
       preserveAspectRatio="none"
       shapeRendering="auto"
     >
-      <defs>
-        <path
-          id="gentle-wave"
-          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-        />
-      </defs>
-
-      <g className="parallax">{useArr}</g>
+      {animation ? (
+        <defs>
+          <path id="gentle-wave" d={data} />
+        </defs>
+      ) : (
+        <path d={data} fill={waveColor} fillOpacity="1" />
+      )}
+      {waves && <g className="parallax">{useArr}</g>}
     </WaveSVG>
   );
 };
 
-export default WavesAnimation;
+export default Waves;

@@ -4,8 +4,7 @@ import { Text, Stack, Box, Badge, Image } from "@chakra-ui/react";
 import styled from "styled-components";
 import Header from "./Components/Header";
 import InnerHeader from "./Components/InnerHeader";
-import WavesAnimation from "./Components/WavesAnimation";
-import WavesNoAnimation from "./Components/WavesNoAnimation";
+import Waves from "./Components/Waves";
 import Content from "./Components/Content";
 import Links from "./Components/Links";
 import Footer from "./Components/Footer";
@@ -45,10 +44,13 @@ function App() {
             <Text fontSize="2xl">Full Stack Software Engineer</Text>
           </Stack>
         </InnerHeader>
-        <WavesAnimation
+        <Waves
           animation
           waves={[0, 3, 5, 7]}
           wavesOpacity={[0.7, 0.5, 0.3, 1]}
+          waveColor="rgb(233,238,242)"
+          data="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          viewBox="0 24 150 28"
         />
         <Content backgroundColor="rgba(233, 238, 242, 1)">
           <Box maxW="960px" mx="auto" mt={20} mb={20}>
@@ -66,9 +68,11 @@ function App() {
             />
           </Box>
         </Content>
-        <WavesNoAnimation
+        <Waves
           backgroundColor="rgba(233, 238, 242, 1)"
           waveColor="rgba(230,92,79,1)"
+          data="M0,224L80,186.7C160,149,320,75,480,69.3C640,64,800,128,960,149.3C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          viewBox="0 0 1440 320"
         />
         <Content backgroundColor="rgba(230,92,79,1)" height="500px">
           <Box
