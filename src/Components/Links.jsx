@@ -12,46 +12,44 @@ const Container = styled.div`
 `;
 const Links = ({ email, linkedin, resume }) => {
   return (
-    <Container>
-      <Grid templateColumns="repeat(3, 1fr)" mt={10}>
-        <GridItem>
-          <Center>
-            <a href={`mailto:${email}`}>
-              <img
-                src={`https://img.shields.io/badge/${email}-326789?style=for-the-badge&logo=gmail&logoColor=white`}
-                height="27"
-                target="_blank"
-                alt="link to my email"
-              />
-            </a>
-          </Center>
-        </GridItem>
-        <GridItem>
-          <Center>
-            <a href={`https://www.linkedin.com/in/${linkedin}/`}>
-              <img
-                src={`https://img.shields.io/badge/${linkedin}-326789?style=for-the-badge&logo=linkedin&logoColor=white_`}
-                height="27"
-                target="_blank"
-                alt="link to my linkedin"
-              />
-            </a>
-          </Center>
-        </GridItem>
-        <GridItem>
-          <Center>
-            <a href={resume}>
-              <img
-                src="https://img.shields.io/badge/Download_Resume-326789?style=for-the-badge&logo=googledrive&logoColor=white"
-                height="27"
-                target="_blank"
-                alt="link to my resume"
-              />
-            </a>
-          </Center>
-        </GridItem>
-      </Grid>
-    </Container>
+    <Grid templateColumns="repeat(3, 1fr)" pt={10}>
+      <GridItem>
+        <Center>
+          <a href={`mailto:${email}`}>
+            <img
+              src={`https://img.shields.io/badge/${email}-326789?style=for-the-badge&logo=gmail&logoColor=white`}
+              height="27"
+              target="_blank"
+              alt="link to my email"
+            />
+          </a>
+        </Center>
+      </GridItem>
+      <GridItem>
+        <Center>
+          <a href={`https://www.linkedin.com/in/${linkedin}/`}>
+            <img
+              src={`https://img.shields.io/badge/${linkedin}-326789?style=for-the-badge&logo=linkedin&logoColor=white_`}
+              height="27"
+              target="_blank"
+              alt="link to my linkedin"
+            />
+          </a>
+        </Center>
+      </GridItem>
+      <GridItem>
+        <Center>
+          <a href={resume}>
+            <img
+              src="https://img.shields.io/badge/Download_Resume-326789?style=for-the-badge&logo=googledrive&logoColor=white"
+              height="27"
+              target="_blank"
+              alt="link to my resume"
+            />
+          </a>
+        </Center>
+      </GridItem>
+    </Grid>
   );
 };
 

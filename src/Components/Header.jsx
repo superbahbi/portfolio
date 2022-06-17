@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLogo>
-        <img src="./logo.png" width={64} height={64} />
+        <img src="./logo.png" width={64} height={64} alt="logo" />
       </HeaderLogo>
       <HeaderLinks href="#">About</HeaderLinks>
       <HeaderLinks href="#">Project</HeaderLinks>

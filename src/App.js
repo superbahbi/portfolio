@@ -1,6 +1,6 @@
 import React from "react";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
-import { Text, Stack, Box, Badge, Image } from "@chakra-ui/react";
+import { Text, Box, Grid, GridItem } from "@chakra-ui/react";
 import styled from "styled-components";
 import Header from "./Components/Header";
 import InnerHeader from "./Components/InnerHeader";
@@ -8,16 +8,26 @@ import Waves from "./Components/Waves";
 import Content from "./Components/Content";
 import Links from "./Components/Links";
 import Footer from "./Components/Footer";
+import ProjectBox from "./Components/ProjectBox";
 
-const colors = {
-  brand: {
-    900: "#1a365d",
-    800: "#153e75",
-    700: "#2a69ac",
+import twitterCloneWeb from "./Assets/twitter-clone-web.jpg";
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'Inconsolata', monospace`,
+    body: `'Raleway', sans-serif`,
   },
-};
-
-const theme = extendTheme({ colors });
+  colors: {
+    brand: {
+      900: "#326789", // dark blue
+      800: "#78a6c8", // light blue
+      700: "#e9eef2", // light grey
+      600: "#e65c4f", // red
+      500: "#9f9f9f", // grey
+    },
+  },
+  brand: {},
+});
 
 const Container = styled.div`
   position: relative;
@@ -38,12 +48,10 @@ function App() {
     <ChakraProvider theme={theme}>
       <Container>
         <Header />
-        <InnerHeader>
-          <Stack spacing={3}>
-            <Text fontSize="4xl">Robert Kugler</Text>
-            <Text fontSize="2xl">Full Stack Software Engineer</Text>
-          </Stack>
-        </InnerHeader>
+        <InnerHeader
+          name="Robert Kugler"
+          position="Full Stack Software Engineer"
+        />
         <Waves
           animation
           waves={[0, 3, 5, 7]}
@@ -74,60 +82,37 @@ function App() {
           data="M0,224L80,186.7C160,149,320,75,480,69.3C640,64,800,128,960,149.3C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           viewBox="0 0 1440 320"
         />
-        <Content backgroundColor="rgba(230,92,79,1)" height="500px">
-          <Box
-            maxW="sm"
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            background="gray.100"
-          >
-            <Image
-              src="https://picsum.photos/600/300"
-              alt="https://picsum.photos/500/300"
-            />
-            <Box p="6">
-              <Box display="flex" alignItems="baseline">
-                <Badge borderRadius="full" px="2" colorScheme="teal">
-                  New
-                </Badge>
-                <Box
-                  color="gray.500"
-                  fontWeight="semibold"
-                  letterSpacing="wide"
-                  fontSize="xs"
-                  textTransform="uppercase"
-                  ml="2"
-                >
-                  test
-                </Box>
-              </Box>
-
-              <Box
-                mt="1"
-                fontWeight="semibold"
-                as="h4"
-                lineHeight="tight"
-                noOfLines={1}
-              >
-                test
-              </Box>
-
-              <Box>
-                111
-                <Box as="span" color="gray.600" fontSize="sm">
-                  / wk
-                </Box>
-              </Box>
-
-              <Box display="flex" mt="2" alignItems="center">
-                <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                  test
-                </Box>
-              </Box>
-            </Box>
-          </Box>
+        <Content backgroundColor="rgba(230,92,79,1)">
+          <Grid templateColumns="repeat(2, 1fr)" gap={4} pt={20} pb={20}>
+            <GridItem colSpan={2} h="100%">
+              <ProjectBox
+                projectImg={twitterCloneWeb}
+                projectTitle="Twitter Clone Web"
+                projectSubTitle="React, CSS3, HTML5"
+                projectDescription="A twitter clone built in reactjs framework using mongodb database
+            and cloudinary storage."
+                demoLink="https://twitter.bahbi.net"
+                codeLink="https://github.com/superbahbi/twitter-clone-web"
+              />
+            </GridItem>
+            <GridItem colStart={4} colEnd={6} h="10">
+              <ProjectBox
+                projectImg="https://opengraph.githubassets.com/ed0f338ae724314eafdf74b09b609e5fcf7dd2d05c959c5be69d6771df281427/superbahbi/twitter-clone-server"
+                projectTitle="Twitter Clone Server"
+                projectSubTitle="Nodejs, MongoDB, Express"
+                projectDescription="A backend service for twitter clone web and app, written in nodejs, expressjs, mongodb.."
+                demoLink="https://twitter-clone-server2.herokuapp.com/"
+                codeLink="https://github.com/superbahbi/twitter-clone-server"
+              />
+            </GridItem>
+          </Grid>
         </Content>
+        <Waves
+          backgroundColor="rgba(233, 238, 242, 1)"
+          waveColor="rgba(230,92,79,1)"
+          data="M0,224L30,208C60,192,120,160,180,170.7C240,181,300,235,360,266.7C420,299,480,309,540,272C600,235,660,149,720,138.7C780,128,840,192,900,181.3C960,171,1020,85,1080,74.7C1140,64,1200,128,1260,170.7C1320,213,1380,235,1410,245.3L1440,256L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+          viewBox="0 0 1440 320"
+        />
         <Footer year={new Date().getFullYear()} name="Robert Kugler" />
       </Container>
     </ChakraProvider>

@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes, css } from "styled-components";
 
 const waveAnimations = keyframes`
-0% {
+  0% {
     transform: translate3d(-90px, 0, 0);
   }
 

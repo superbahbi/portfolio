@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
-const FooterContainer = styled.footer`
+import { Box, Text } from "@chakra-ui/react";
+const FooterContainer = styled(Box)`
   display: block;
   text-align: center;
   padding: 30px 0;
@@ -12,10 +12,10 @@ const FooterContainer = styled.footer`
 
 const Footer = ({ year, name }) => {
   return (
-    <FooterContainer>
-      <p>
+    <FooterContainer backgroundColor="brand.700">
+      <Text>
         Copyright {year} {name}
-      </p>
+      </Text>
     </FooterContainer>
   );
 };
