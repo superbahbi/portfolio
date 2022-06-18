@@ -42,7 +42,10 @@ const Container = styled.div`
 
 const ContentGrid = styled(Grid)`
   gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
