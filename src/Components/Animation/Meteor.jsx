@@ -34,7 +34,7 @@ const StyledMeteor = styled.div`
 
   animation: ${meteor} ${(props) => props.delay}s linear infinite;
   @media (max-width: 768px) {
-    animation: ${meteor} ${(props) => props.delay + 5}s linear infinite;
+    animation: ${meteor} ${(props) => props.delay + 10}s linear infinite;
   }
   &:before {
     content: "";
@@ -59,7 +59,7 @@ const Meteor = ({ amount }) => {
             className="Meteor"
             delay={Math.floor((Math.random() * 15 + 3) * 100) / 100}
             vertical={Math.floor(Math.random() * 90 + 9)}
-            horizontal={Math.floor(Math.random() * 200 + 100)}
+            horizontal={Math.floor(Math.random() * 250 + 50)}
           />
         );
       })}

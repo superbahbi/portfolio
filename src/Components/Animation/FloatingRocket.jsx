@@ -13,14 +13,12 @@ const Rocket = styled(Image)`
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  margin-left: 30px;
-  margin-top: 5px;
 `;
 const FloatingRocket = () => {
   return (
     <>
       <Center>
-        <Rocket boxSize="lg" src={RocketBase} alt="Rocket Base" />
+        <Rocket boxSize="md" src={RocketBase} alt="Rocket Base" />
       </Center>
     </>
   );

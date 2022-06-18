@@ -23,6 +23,9 @@ const HeaderLogo = styled.div`
   margin-right: auto;
 `;
 const HeaderLinks = styled.a`
+  @media (max-width: 768px) {
+    display: none;
+  }
   margin-left: 12px;
   margin-bottom: auto;
 `;

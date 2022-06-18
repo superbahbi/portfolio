@@ -7,6 +7,9 @@ const FooterContainer = styled.div`
   position: relative;
   text-align: center;
   top: -120px;
+  @media (max-width: 1024px) {
+    top: -100px;
+  }
   padding-top: 120px;
   padding-bottom: 20px;
   background: radial-gradient(
