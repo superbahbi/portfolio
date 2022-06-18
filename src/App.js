@@ -31,7 +31,11 @@ const theme = extendTheme({
 const Container = styled.div`
   position: relative;
   text-align: center;
-  background: linear-gradient(70deg, #016d9c 0%, #004972 50%, #002b44 100%);
+  background: radial-gradient(
+    ellipse at bottom,
+    ${(props) => props.color2} 0%,
+    ${(props) => props.color} 100%
+  );
   height: 100vh;
   color: white;
 `;
@@ -57,7 +61,7 @@ const ContentBox = styled(Box)`
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Container>
+      <Container color="#000" color2={theme.colors.brand[900]}>
         <Header />
         <InnerHeader
           name="Robert Kugler"
@@ -67,11 +71,11 @@ function App() {
           animation
           waves={[0, 3, 5, 7]}
           wavesOpacity={[0.7, 0.5, 0.3, 1]}
-          waveColor="rgb(233,238,242)"
+          waveColor={theme.colors.brand[700]}
           data="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
           viewBox="0 24 150 28"
         />
-        <Content backgroundColor="rgba(233, 238, 242, 1)">
+        <Content backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="2xl">
               Hi there,👋 I am an aspiring full stack developer, 💻 currently
@@ -89,12 +93,12 @@ function App() {
         </Content>
         <Waves
           theme={theme}
-          backgroundColor="rgba(233, 238, 242, 1)"
-          waveColor="rgba(230,92,79,1)"
+          backgroundColor={theme.colors.brand[700]}
+          waveColor={theme.colors.brand[600]}
           data="M0,224L80,186.7C160,149,320,75,480,69.3C640,64,800,128,960,149.3C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           viewBox="0 0 1440 320"
         />
-        <Content backgroundColor="rgba(230,92,79,1)">
+        <Content backgroundColor={theme.colors.brand[600]}>
           <ContentGrid>
             <ProjectBox
               projectImg={twitterCloneWeb}
@@ -136,7 +140,7 @@ function App() {
         </Content>
         <Waves
           theme={theme}
-          backgroundColor="rgba(233, 238, 242, 1)"
+          backgroundColor={theme.colors.brand[700]}
           waveColor={theme.colors.brand[600]}
           data="M0,224L30,208C60,192,120,160,180,170.7C240,181,300,235,360,266.7C420,299,480,309,540,272C600,235,660,149,720,138.7C780,128,840,192,900,181.3C960,171,1020,85,1080,74.7C1140,64,1200,128,1260,170.7C1320,213,1380,235,1410,245.3L1440,256L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
           viewBox="0 0 1440 320"
