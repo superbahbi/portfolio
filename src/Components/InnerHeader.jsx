@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { Text, Stack, Heading } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
 // import Meteor from "./Animation/Meteor";
@@ -27,7 +27,7 @@ const InnerHeaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 75vh;
+  height: 80vh;
   @media (max-width: 768px) {
     height: 50vh;
   }
