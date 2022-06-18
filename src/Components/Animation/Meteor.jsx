@@ -59,7 +59,7 @@ const Meteor = ({ amount }) => {
             className="Meteor"
             delay={Math.floor((Math.random() * 15 + 3) * 100) / 100}
             vertical={Math.floor(Math.random() * 90 + 9)}
-            horizontal={Math.floor(Math.random() * 300 + 100)}
+            horizontal={Math.floor(Math.random() * 200 + 100)}
           />
         );
       })}
