@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, Stack, Heading } from "@chakra-ui/react";
-import styled, { keyframes, css } from "styled-components";
+import { Text, Stack, Heading, theme } from "@chakra-ui/react";
+import styled, { keyframes } from "styled-components";
 
 const meteor = keyframes`
 0% {
@@ -41,20 +41,24 @@ const Star = styled.div`
   width: 1px;
   height: 1px;
   background: transparent;
-  box-shadow: ${(props) => props.starShadowBox};
+  box-shadow: ${(props) => props.starShadowBox};P
 `;
 const Meteor = styled.div`
   position: absolute;
   top: ${(props) => props.horizontal}px;
-  left: ${(props) => props.vertical}%;
+  left: ${(props) => props.vertical * 1}%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg); // diagonal line from top right to bottom left
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 
-  animation: ${meteor} ${(props) => props.timer}s ease infinite;
+  animation: ${meteor} ${(props) => props.delay}s linear infinite;
   @media (max-width: 768px) {
-    animation: ${meteor} ${(props) => props.timer + 5}s ease infinite;
+    animation: ${meteor} ${(props) => props.delay + 5}s linear infinite;
   }
   &:before {
     content: "";
@@ -63,6 +67,7 @@ const Meteor = styled.div`
     height: 5px;
     border-radius: 50%;
     margin-top: -2px;
+    margin-left: -148px;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 15px 3px #fff;
   }
@@ -110,19 +115,25 @@ const InnerHeader = ({ name, position }) => {
         return (
           <Meteor
             key={i}
-            timer={Math.floor((Math.random() * 15 + 3) * 100) / 100}
+            delay={Math.floor((Math.random() * 15 + 3) * 100) / 100}
             vertical={Math.floor(Math.random() * 90 + 9)}
-            horizontal={Math.floor(Math.random() * 500 + 100)}
+            horizontal={Math.floor(Math.random() * 300 + 100)}
           />
         );
       })}
       <Star starShadowBox={starShadowBox} />
       <InnerHeaderContainer>
         <Stack>
-          <InnerHeaderText fontWeight="100" className="animation">
+          <InnerHeaderText
+            fontWeight="100"
+            className="animation"
+            color="brand.700"
+          >
             {name}
           </InnerHeaderText>
-          <Text fontSize="2xl">{position}</Text>
+          <Text fontSize="2xl" color="brand.700">
+            {position}
+          </Text>
         </Stack>
       </InnerHeaderContainer>
     </>
