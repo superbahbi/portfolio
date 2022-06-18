@@ -32,8 +32,8 @@ const Links = ({ email, linkedin, resume }) => {
               borderRadius="md"
               bg="brand.600"
               color="white"
-              px={4}
-              h={8}
+              px={6}
+              h={10}
             >
               <HStack>
                 <Box as={TbBrandGmail} fontSize="2xl" />
@@ -51,8 +51,8 @@ const Links = ({ email, linkedin, resume }) => {
               borderRadius="md"
               bg="brand.600"
               color="white"
-              px={4}
-              h={8}
+              px={6}
+              h={10}
             >
               <HStack>
                 <Box as={TbBrandLinkedin} fontSize="2xl" />
@@ -70,8 +70,8 @@ const Links = ({ email, linkedin, resume }) => {
               borderRadius="md"
               bg="brand.600"
               color="white"
-              px={4}
-              h={8}
+              px={6}
+              h={10}
             >
               <HStack>
                 <Box as={TbCloudDownload} fontSize="2xl" />
