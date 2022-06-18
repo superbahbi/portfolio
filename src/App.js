@@ -75,7 +75,7 @@ function App() {
           data="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
           viewBox="0 24 150 28"
         />
-        <Content backgroundColor={theme.colors.brand[700]}>
+        <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="2xl">
               Hi there,👋 I am an aspiring full stack developer, 💻 currently
@@ -98,7 +98,7 @@ function App() {
           data="M0,224L80,186.7C160,149,320,75,480,69.3C640,64,800,128,960,149.3C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           viewBox="0 0 1440 320"
         />
-        <Content backgroundColor={theme.colors.brand[600]}>
+        <Content id="project" backgroundColor={theme.colors.brand[600]}>
           <ContentGrid>
             <ProjectBox
               projectImg={twitterCloneWeb}

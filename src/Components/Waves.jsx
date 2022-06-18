@@ -13,6 +13,7 @@ const waveAnimations = keyframes`
 
 const WaveSVG = styled.svg`
   position: relative;
+  z-index: 1;
   width: 100%;
   height: 15vh;
   margin-bottom: -7px;

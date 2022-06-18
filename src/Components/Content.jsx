@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const Container = styled.div`
+const Container = styled.section`
   display: grid;
   flex-direction: column;
   justify-content: center;
@@ -12,9 +12,9 @@ const Container = styled.div`
   height: ${(props) => props.height};
   color: #000;
 `;
-const Content = ({ children, backgroundColor, height }) => {
+const Content = ({ children, id, backgroundColor, height }) => {
   return (
-    <Container backgroundColor={backgroundColor} height={height}>
+    <Container id={id} backgroundColor={backgroundColor} height={height}>
       {children}
     </Container>
   );
