@@ -31,11 +31,7 @@ const theme = extendTheme({
 const Container = styled.div`
   position: relative;
   text-align: center;
-  background: linear-gradient(
-    60deg,
-    rgba(120, 166, 200, 1) 0%,
-    rgba(50, 103, 137, 1) 100%
-  );
+  background: linear-gradient(70deg, #016d9c 0%, #004972 50%, #002b44 100%);
   height: 100vh;
   color: white;
 `;
