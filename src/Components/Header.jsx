@@ -29,15 +29,13 @@ const HeaderLinks = styled.a`
 const Header = () => {
   useEffect(() => {
     const [red, green, blue] = [255, 255, 255];
-    const section1 = document.querySelector("#header");
-    console.log(section1);
+    const section = document.querySelector("#header");
+
     window.addEventListener("scroll", () => {
       let y = 1 + (window.scrollY || window.pageYOffset) / 250;
       y = y < 1 ? 1 : y; // ensure y is always >= 1 (due to Safari's elastic scroll)
-      console.log(y);
       const [r, g, b] = [red / y, green / y, blue / y].map(Math.round);
-      console.log(r, g, b);
-      section1.style.color = `rgb(${r}, ${g}, ${b})`;
+      section.style.color = `rgb(${r}, ${g}, ${b})`;
     });
   }, []);
   return (
