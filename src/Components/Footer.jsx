@@ -1,20 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Text } from "@chakra-ui/react";
-const FooterContainer = styled(Box)`
-  display: block;
+import { Text } from "@chakra-ui/react";
+import FloatingRocket from "./Animation/FloatingRocket";
+import Star from "./Animation/Star";
+const FooterContainer = styled.div`
+  position: relative;
   text-align: center;
-  padding: 30px 0;
-  color: #777;
-  background-color: #fff;
-  border-top: 1px solid #eaeaea;
+  top: -120px;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  background: radial-gradient(
+    ellipse at bottom,
+    ${(props) => props.color2} 0%,
+    ${(props) => props.color} 100%
+  );
+  color: white;
 `;
 
-const Footer = ({ year, name }) => {
+const Footer = ({ color, color2, year, name }) => {
   return (
-    <FooterContainer backgroundColor="brand.700">
+    <FooterContainer color={color} color2={color2} backgroundColor="brand.700">
+      <Star amount={300} />
+      <FloatingRocket />
       <Text>
-        Copyright {year} {name}
+        © Copyright {year} {name}
       </Text>
     </FooterContainer>
   );
