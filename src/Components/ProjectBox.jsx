@@ -1,13 +1,14 @@
 import React from "react";
-import { Box, Image, Center, Link } from "@chakra-ui/react";
+// import styled from "styled-components";
+import { Box, Image } from "@chakra-ui/react";
 
 const ProjectBox = ({
   projectImg,
   projectTitle,
   projectSubTitle,
   projectDescription,
-  demoLink,
-  codeLink,
+  // demoLink,
+  // codeLink,
 }) => {
   return (
     <Box
@@ -15,6 +16,7 @@ const ProjectBox = ({
       borderWidth="1px"
       borderRadius="lg"
       background="brand.700"
+      cursor={"pointer"}
     >
       <Image borderRadius="lg" src={projectImg} alt="Twitter Clone Web" />
       <Box p="6">
@@ -42,39 +44,42 @@ const ProjectBox = ({
             {projectDescription}
           </Box>
         </Box>
-        <Center>
-          <Box
-            display="grid"
-            gridTemplateColumns="repeat(2, 1fr)"
-            mt="2"
-            w="200px"
-          >
-            <Link href={codeLink}>
-              <Box
-                as="button"
-                borderRadius="md"
-                bg="brand.500"
-                color="white"
-                px={4}
-                h={8}
-              >
-                Code
-              </Box>
-            </Link>
-            <Link href={demoLink}>
-              <Box
-                as="button"
-                borderRadius="md"
-                bg="brand.600"
-                color="white"
-                px={4}
-                h={8}
-              >
-                Demo
-              </Box>
-            </Link>
-          </Box>
-        </Center>
+
+        {/* <Box>
+          <Center>
+            <Box
+              display="grid"
+              gridTemplateColumns="repeat(2, 1fr)"
+              mt="2"
+              w="200px"
+            >
+              <Link href={codeLink}>
+                <Box
+                  as="button"
+                  borderRadius="md"
+                  bg="brand.500"
+                  color="white"
+                  px={4}
+                  h={8}
+                >
+                  Code
+                </Box>
+              </Link>
+              <Link href={demoLink}>
+                <Box
+                  as="button"
+                  borderRadius="md"
+                  bg="brand.600"
+                  color="white"
+                  px={4}
+                  h={8}
+                >
+                  Demo
+                </Box>
+              </Link>
+            </Box>
+          </Center>
+        </Box> */}
       </Box>
     </Box>
   );
