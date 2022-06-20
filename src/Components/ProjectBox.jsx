@@ -28,14 +28,7 @@ const ProjectBox = ({
             </Box>
           </Box>
 
-          <Box
-            mt="1"
-            fontWeight="400"
-            as="h5"
-            lineHeight="tight"
-            color="gray.500"
-          >
-            {/* {projectSubTitle} */}
+          <Box mb={4}>
             {projectStack &&
               projectStack.map((stack, index) => {
                 return (
@@ -44,47 +37,45 @@ const ProjectBox = ({
               })}
           </Box>
 
-          <Box>
-            <Box as="span" color="gray.600" fontSize="sm">
-              {projectDescription}
+          <Box as="p" color="gray.600" fontSize="md" w="250px" m="auto">
+            <Center>{projectDescription}</Center>
+          </Box>
+          <Center>
+            <Box
+              position="absolute"
+              bottom="0"
+              mb={4}
+              display="grid"
+              gridTemplateColumns="repeat(2, 1fr)"
+              mt="2"
+              w="200px"
+            >
+              <Link href={codeLink}>
+                <Box
+                  as="button"
+                  borderRadius="md"
+                  bg="brand.500"
+                  color="white"
+                  px={4}
+                  h={8}
+                >
+                  Code
+                </Box>
+              </Link>
+              <Link href={demoLink}>
+                <Box
+                  as="button"
+                  borderRadius="md"
+                  bg="brand.900"
+                  color="white"
+                  px={4}
+                  h={8}
+                >
+                  Demo
+                </Box>
+              </Link>
             </Box>
-          </Box>
-
-          <Box>
-            <Center>
-              <Box
-                display="grid"
-                gridTemplateColumns="repeat(2, 1fr)"
-                mt="2"
-                w="200px"
-              >
-                <Link href={codeLink}>
-                  <Box
-                    as="button"
-                    borderRadius="md"
-                    bg="brand.500"
-                    color="white"
-                    px={4}
-                    h={8}
-                  >
-                    Code
-                  </Box>
-                </Link>
-                <Link href={demoLink}>
-                  <Box
-                    as="button"
-                    borderRadius="md"
-                    bg="brand.600"
-                    color="white"
-                    px={4}
-                    h={8}
-                  >
-                    Demo
-                  </Box>
-                </Link>
-              </Box>
-            </Center>
-          </Box>
+          </Center>
         </Box>
       )}
     </Box>

@@ -143,7 +143,7 @@ const projects = [
       { name: "CSS3", icon: <SiCss3 color="white" /> },
       { name: "HTML5", icon: <SiHtml5 color="white" /> },
       { name: "ChakraUI", icon: <SiChakraui color="white" /> },
-      { name: "Animation", icon: "" },
+      { name: "Animation", icon: <SiCss3 color="white" /> },
     ],
     projectSubTitle: "Reactjs, CSS3, HTML5, Chakra UI, Animation",
     projectDescription: "My personal portfolio built in react framework. ",
