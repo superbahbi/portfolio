@@ -13,6 +13,7 @@ const typewriter = (width) => keyframes`
     width: ${width};
   }
 `;
+
 const blinkCursor = keyframes`
   from {
     border-right-color: white;
@@ -21,6 +22,7 @@ const blinkCursor = keyframes`
     border-right-color: transparent;
   }
 `;
+
 const InnerHeaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -50,6 +52,7 @@ const InnerHeaderText = styled(Heading)`
   overflow: hidden;
   font-weight: 300;
 `;
+
 const Navbar = styled.div`
   position: fixed;
   z-index: 2;
@@ -58,12 +61,14 @@ const Navbar = styled.div`
   margin: auto;
   width: 100%;
 `;
+
 const HeaderContainer = styled.nav`
   display: flex;
   padding: 20px 20px;
   justify-content: flex-end;
   align-items: flex-end;
 `;
+
 const HeaderLogo = styled.div`
   width: 50px;
   fill: white;
@@ -72,6 +77,7 @@ const HeaderLogo = styled.div`
   vertical-align: middle;
   margin-right: auto;
 `;
+
 const HeaderLinks = styled.a`
   @media (max-width: 768px) {
     display: none;
@@ -79,6 +85,12 @@ const HeaderLinks = styled.a`
   margin-left: 12px;
   margin-bottom: auto;
 `;
+
+/* Header Components 
+  @params {object} theme - theme object from chakra-ui
+  @params {string} name - developer name
+  @params {string} title - developer title
+*/
 const Header = ({ theme, name, title }) => {
   useEffect(() => {
     const [red, green, blue] = [255, 255, 255];
@@ -98,7 +110,7 @@ const Header = ({ theme, name, title }) => {
       <Navbar>
         <HeaderContainer id="header">
           <HeaderLogo>
-            <img src="./logo.png" width={64} height={64} alt="logo" />
+            <img src="./rk-logo-256.png" width={64} height={64} alt="logo" />
           </HeaderLogo>
           <HeaderLinks href="#about">About</HeaderLinks>
           <HeaderLinks href="#project">Project</HeaderLinks>

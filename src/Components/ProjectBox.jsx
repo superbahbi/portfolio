@@ -11,7 +11,7 @@ const ProjectBox = ({
   codeLink,
 }) => {
   return (
-    <Box width="350px" height="350px" background="brand.700" cursor={"pointer"}>
+    <Box width="350px" height="350px" background="brand.700">
       {projectImg && <Image src={projectImg} alt={projectTitle} />}
       {!projectImg && (
         <Box p="6">
