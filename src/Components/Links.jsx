@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
-import { Grid, GridItem, Center, Link, Box, HStack } from "@chakra-ui/react";
+import { Grid, GridItem, Center } from "@chakra-ui/react";
+import BrandIcon from "./BrandIcon";
 const Container = styled(Grid)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,11 +13,6 @@ const Container = styled(Grid)`
       padding-bottom: 1rem;
     }
   }
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // flex-direction: column;
-  // text-align: center;
   a {
     padding-left: 1rem;
   }
@@ -25,7 +21,7 @@ const Links = ({ email, linkedin, resume }) => {
   return (
     <Container>
       <GridItem>
-        <Center>
+        {/* <Center>
           <Link href={`mailto:${email}`}>
             <Box
               as="button"
@@ -41,44 +37,29 @@ const Links = ({ email, linkedin, resume }) => {
               </HStack>
             </Box>
           </Link>
+        </Center> */}
+        <BrandIcon
+          name={email}
+          icon={<TbBrandGmail color="white" />}
+          link={`mailto:${email}`}
+        />
+      </GridItem>
+      <GridItem>
+        <Center>
+          <BrandIcon
+            name={linkedin}
+            icon={<TbBrandLinkedin color="white" />}
+            link={`https://www.linkedin.com/in/${linkedin}/`}
+          />
         </Center>
       </GridItem>
       <GridItem>
         <Center>
-          <Link href={`https://www.linkedin.com/in/${linkedin}/`}>
-            <Box
-              as="button"
-              borderRadius="md"
-              bg="brand.600"
-              color="white"
-              px={6}
-              h={10}
-            >
-              <HStack>
-                <Box as={TbBrandLinkedin} fontSize="2xl" />
-                <Box>{linkedin.toUpperCase()}</Box>
-              </HStack>
-            </Box>
-          </Link>
-        </Center>
-      </GridItem>
-      <GridItem>
-        <Center>
-          <Link href={resume}>
-            <Box
-              as="button"
-              borderRadius="md"
-              bg="brand.600"
-              color="white"
-              px={6}
-              h={10}
-            >
-              <HStack>
-                <Box as={TbCloudDownload} fontSize="2xl" />
-                <Box>{"download resume".toUpperCase()}</Box>
-              </HStack>
-            </Box>
-          </Link>
+          <BrandIcon
+            name="Download resume"
+            icon={<TbCloudDownload color="white" />}
+            link={resume}
+          />
         </Center>
       </GridItem>
     </Container>

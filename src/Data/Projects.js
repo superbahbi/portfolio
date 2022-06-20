@@ -1,5 +1,6 @@
 import {
   twitterCloneWebImage,
+  twitterCloneAppImage,
   twitterCloneServerImage,
   wordleImage,
   discoverifyImage,
@@ -8,11 +9,47 @@ import {
   portfolioImage,
   corkifyImage,
 } from "./Images";
+import {
+  SiSocketdotio,
+  SiExpress,
+  SiNodedotjs,
+  SiMongodb,
+  SiSpotify,
+  SiChakraui,
+  SiReact,
+  SiCss3,
+  SiHtml5,
+  SiReactrouter,
+  SiStyledcomponents,
+  SiExpo,
+  SiPassport,
+  SiFirebase,
+  SiStripe,
+} from "react-icons/si";
 const projects = [
+  {
+    projectImg: twitterCloneAppImage,
+    projectTitle: "Twitter Clone App",
+    projectStack: [
+      { name: "React Native", icon: <SiReact color="white" /> },
+      { name: "Expo", icon: <SiExpo color="white" /> },
+    ],
+    projectDescription:
+      "A twitter clone built in react native framework using mongodb database and cloudinary storage.",
+    demoLink: "https://twitter.bahbi.net/",
+    codeLink: "https://github.com/superbahbi/twitter-clone-app",
+  },
   {
     projectImg: twitterCloneWebImage,
     projectTitle: "Twitter Clone Web",
-    projectSubTitle: "Reactjs, CSS3, HTML5, Socket.io",
+    projectStack: [
+      { name: "Reactjs", icon: <SiReact color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "HTML5", icon: <SiHtml5 color="white" /> },
+      { name: "React Router", icon: <SiReactrouter color="white" /> },
+      { name: "Socket.io", icon: <SiSocketdotio color="white" /> },
+      { name: "Styled Components", icon: <SiStyledcomponents color="white" /> },
+    ],
     projectDescription:
       "A twitter clone built in reactjs framework using mongodb database and cloudinary storage.",
     demoLink: "https://twitter.bahbi.net",
@@ -21,26 +58,26 @@ const projects = [
   {
     projectImg: twitterCloneServerImage,
     projectTitle: "Twitter Clone Server",
-    projectSubTitle: "Nodejs, MongoDB, Express, Socket.io",
+    projectStack: [
+      { name: "Nodejs", icon: <SiNodedotjs color="white" /> },
+      { name: "MongoDB", icon: <SiMongodb color="white" /> },
+      { name: "Express", icon: <SiExpress color="white" /> },
+      { name: "Socket.io", icon: <SiSocketdotio color="white" /> },
+      { name: "Passport", icon: <SiPassport color="white" /> },
+    ],
     projectDescription:
       "A backend service for twitter clone web and app, written in nodejs, expressjs, mongodb.",
     demoLink: "https://twitter-clone-server2.herokuapp.com/",
     codeLink: "https://github.com/superbahbi/twitter-clone-server",
   },
   {
-    projectImg:
-      "https://opengraph.githubassets.com/ed0f338ae724314eafdf74b09b609e5fcf7dd2d05c959c5be69d6771df281427/superbahbi/twitter-clone-app",
-    projectTitle: "Twitter Clone App",
-    projectSubTitle: "React Native",
-    projectDescription:
-      "A twitter clone built in react native framework using mongodb database and cloudinary storage.",
-    demoLink: "https://twitter.bahbi.net/",
-    codeLink: "https://github.com/superbahbi/twitter-clone-app",
-  },
-  {
     projectImg: wordleImage,
     projectTitle: "Wordle",
-    projectSubTitle: "Reactjs, CSS3, HTML5",
+    projectStack: [
+      { name: "Reactjs", icon: <SiReact color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "HTML5", icon: <SiHtml5 color="white" /> },
+    ],
     projectDescription: "A worlde clone built in react framework",
     demoLink: "https://wordle.bahbi.net/",
     codeLink: "https://github.com/superbahbi/wordle",
@@ -48,7 +85,11 @@ const projects = [
   {
     projectImg: memoryGameImage,
     projectTitle: "Memory Game",
-    projectSubTitle: "Reactjs, CSS3, HTML5",
+    projectStack: [
+      { name: "Reactjs", icon: <SiReact color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "HTML5", icon: <SiHtml5 color="white" /> },
+    ],
     projectDescription: "A game built in reactjs. Match and win the game.",
     demoLink: "https://memory.bahbi.net/",
     codeLink: "https://github.com/superbahbi/barbarian-memory",
@@ -56,36 +97,58 @@ const projects = [
   {
     projectImg: ticTacToeImage,
     projectTitle: "Tic Tac Toe Online",
-    projectSubTitle: "Reactjs, CSS3, HTML5, Socket.io",
+    projectStack: [
+      { name: "Reactjs", icon: <SiReact color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "HTML5", icon: <SiHtml5 color="white" /> },
+      { name: "Socket.io", icon: <SiSocketdotio color="white" /> },
+    ],
     projectDescription:
       "A tic tac toe game built in reactjs and socket.io. Play with your friends.",
-    demoLink: "ttt-online.bahbi.net/",
-    codeLink: "https://github.com/superbahbi/ttt-online",
+    demoLink: "https://ttt-online.bahbi.net/",
+    codeLink: "https://github.com/superbahbi/tictactoe-online",
   },
   {
     projectImg: discoverifyImage,
     projectTitle: "Discoverify",
-    projectSubTitle: "Reactjs, CSS3, HTML5, Spotify API",
+    projectStack: [
+      { name: "Reactjs", icon: <SiReact color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "HTML5", icon: <SiHtml5 color="white" /> },
+      { name: "Spotify API", icon: <SiSpotify color="white" /> },
+    ],
     projectDescription: "A spotify app built in react framework.",
     demoLink: "https://discoverify.bahbi.net/",
     codeLink: "https://github.com/superbahbi/discoverify",
   },
   {
+    projectImg: corkifyImage,
+    projectTitle: "Corkify",
+    projectStack: [
+      { name: "React Native", icon: <SiReact color="white" /> },
+      { name: "Expo", icon: <SiExpo color="white" /> },
+      { name: "Firebase", icon: <SiFirebase color="white" /> },
+      { name: "Stripe", icon: <SiStripe color="white" /> },
+    ],
+    projectDescription:
+      "A wine flash store built in react native framework using firebase auth, real time database, and storage.",
+    demoLink: "https://github.com/superbahbi/corkify",
+    codeLink: "https://github.com/superbahbi/corkify",
+  },
+  {
     projectImg: portfolioImage,
     projectTitle: "Portfolio",
-    projectSubTitle: "Reactjs, CSS3, HTML5, Chakar UI, Animation",
+    projectStack: [
+      { name: "Reactjs", icon: <SiReact color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "HTML5", icon: <SiHtml5 color="white" /> },
+      { name: "ChakraUI", icon: <SiChakraui color="white" /> },
+      { name: "Animation", icon: "" },
+    ],
+    projectSubTitle: "Reactjs, CSS3, HTML5, Chakra UI, Animation",
     projectDescription: "My personal portfolio built in react framework. ",
     demoLink: "https://bahbi.net/",
     codeLink: "https://github.com/superbahbi/portfolio",
-  },
-  {
-    projectImg: corkifyImage,
-    projectTitle: "Corkify",
-    projectSubTitle: "React Native",
-    projectDescription:
-      "A wine flash store built in react native framework using firebase auth, real time database, and storage.",
-    demoLink: "https://github.com/superbahbi/superbahbi/blob/main",
-    codeLink: "https://github.com/superbahbi/corkify",
   },
 ];
 

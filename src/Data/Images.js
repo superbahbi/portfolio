@@ -1,19 +1,21 @@
-const twitterCloneWebImage = require("../Assets/twitter-clone-web.jpg");
-const twitterCloneServerImage = require("../Assets/twitter-clone-server.jpg");
-const wordleImage = require("../Assets/wordle.jpg");
-const discoverifyImage = require("../Assets/discoverify.jpg");
-const memoryGameImage = require("../Assets/memory-game.jpg");
-const ticTacToeImage = require("../Assets/tictactoeonline.jpg");
-const portfolioImage = require("../Assets/portfolio.jpg");
-const corkifyImage = require("../Assets/corkify.jpg");
+const twitterCloneWebImage = require("../Assets/twitter-clone-web-square.jpg");
+const twitterCloneAppImage = require("../Assets/twitter-clone-app-square.jpg");
+const twitterCloneServerImage = require("../Assets/twitter-clone-server-square.jpg");
+const wordleImage = require("../Assets/wordle-square.jpg");
+const memoryGameImage = require("../Assets/memory-game-square.jpg");
+const ticTacToeImage = require("../Assets/tictactoeonline-square.jpg");
+const discoverifyImage = require("../Assets/discoverify-square.jpg");
+const portfolioImage = require("../Assets/portfolio-square.jpg");
+const corkifyImage = require("../Assets/corkify-square.jpg");
 
 export {
   twitterCloneWebImage,
+  twitterCloneAppImage,
   twitterCloneServerImage,
   wordleImage,
-  discoverifyImage,
   memoryGameImage,
   ticTacToeImage,
+  discoverifyImage,
   portfolioImage,
   corkifyImage,
 };
