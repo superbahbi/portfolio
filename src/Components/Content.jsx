@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 const Container = styled.section`
   display: grid;
   flex-direction: column;
@@ -12,9 +13,14 @@ const Container = styled.section`
   height: ${(props) => props.height};
   color: #000;
 `;
-const Content = ({ children, id, backgroundColor, height }) => {
+
+/* Content Components
+  @params {string} id - section id of the content
+  @params {theme.color} backgroundColor - background color of the content
+*/
+const Content = ({ children, id, backgroundColor }) => {
   return (
-    <Container id={id} backgroundColor={backgroundColor} height={height}>
+    <Container id={id} backgroundColor={backgroundColor}>
       {children}
     </Container>
   );
