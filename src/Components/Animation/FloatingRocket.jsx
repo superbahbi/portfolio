@@ -3,9 +3,9 @@ import { Center, Image } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
 import RocketBase from "../../Assets/rocketbase.png";
 const floating = keyframes`
-0% { transform: translate(0,  0px); }
-50%  { transform: translate(0, 15px); }
-100%   { transform: translate(0, -0px); }  
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }  
 `;
 
 const Rocket = styled(Image)`

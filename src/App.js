@@ -1,14 +1,14 @@
 import React from "react";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
-import { Text, Box, Grid } from "@chakra-ui/react";
+import { Text, Box, Grid, Heading } from "@chakra-ui/react";
 import styled from "styled-components";
 import Header from "./Components/Header";
-import InnerHeader from "./Components/InnerHeader";
-import Waves from "./Components/Waves";
 import Content from "./Components/Content";
 import Links from "./Components/Links";
 import Footer from "./Components/Footer";
-import ProjectBox from "./Components/ProjectBox";
+
+import Waves from "./Components/Animation/Waves";
+import FlipCard from "./Components/Animation/Flip/FlipCard";
 
 import projects from "./Data/Projects";
 
@@ -16,6 +16,7 @@ const theme = extendTheme({
   fonts: {
     heading: `'Inconsolata', monospace`,
     body: `'Raleway', sans-serif`,
+    mono: `'Roboto Mono, monospace'`,
   },
   colors: {
     brand: {
@@ -41,7 +42,6 @@ const Container = styled.div`
 `;
 
 const ContentGrid = styled(Grid)`
-  gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   @media (max-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
@@ -65,20 +65,18 @@ const ContentBox = styled(Box)`
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Container color="#000" color2={theme.colors.brand[900]}>
-        <Header />
-        <InnerHeader
+      <Container color={theme.colors.black} color2={theme.colors.brand[900]}>
+        {/* Header Components 
+          @params {object} theme - theme object from chakra-ui
+          @params {string} name - developer name
+          @params {string} title - developer title
+        */}
+        <Header
+          theme={theme}
           name="Robert Kugler"
-          position="Full Stack Software Developer"
+          title="Full Stack Software Developer"
         />
-        <Waves
-          animation
-          waves={[0, 3, 5, 7]}
-          wavesOpacity={[0.7, 0.5, 0.3, 1]}
-          waveColor={theme.colors.brand[700]}
-          data="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          viewBox="0 24 150 28"
-        />
+
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="2xl">
@@ -95,6 +93,7 @@ function App() {
             />
           </ContentBox>
         </Content>
+
         <Waves
           theme={theme}
           backgroundColor={theme.colors.brand[700]}
@@ -102,15 +101,20 @@ function App() {
           data="M0,224L80,186.7C160,149,320,75,480,69.3C640,64,800,128,960,149.3C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           viewBox="0 0 1440 320"
         />
+
         <Content id="project" backgroundColor={theme.colors.brand[600]}>
+          <Heading as="h2" size="3xl" color="brand.700" mb={10}>
+            Projects
+          </Heading>
+
           <ContentGrid>
             {projects.map((project, index) => {
               return (
-                <ProjectBox
+                <FlipCard
                   key={index}
                   projectImg={project.projectImg}
                   projectTitle={project.projectTitle}
-                  projectSubTitle={project.projectSubTitle}
+                  projectStack={project.projectStack}
                   projectDescription={project.projectDescription}
                   demoLink={project.demoLink}
                   codeLink={project.codeLink}
