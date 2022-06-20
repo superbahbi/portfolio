@@ -65,13 +65,22 @@ const WaveSVG = styled.svg`
   }
 `;
 
+/* Waves Components
+  @params {boolean} animation - if true, the waves will be animated
+  @params {array} waves - array of numbers that represent the y position of the waves
+  @params {array} wavesOpacity - array of numbers that represent the opacity of the waves
+  @params {theme.color} backgroundColor - background color of the waves
+  @params {theme.color} waveColor - color of the waves
+  @params {string} data - SVG data string of the waves
+  @params {string} viewData - SVG viewbox string of the waves
+*/
 const Waves = ({
   animation,
   waves,
   wavesOpacity,
-  data,
   waveColor,
   backgroundColor,
+  data,
   viewBox,
 }) => {
   let useArr = waves?.map((x, i) => {

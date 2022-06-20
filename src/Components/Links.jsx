@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
 import { Grid, GridItem, Center } from "@chakra-ui/react";
 import BrandIcon from "./BrandIcon";
+
 const Container = styled(Grid)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -17,27 +18,15 @@ const Container = styled(Grid)`
     padding-left: 1rem;
   }
 `;
+/* Links Components
+  @params {string} email - email address
+  @params {string} linkedin - linkedin username
+  @params {string} resume - url of the resume
+*/
 const Links = ({ email, linkedin, resume }) => {
   return (
     <Container>
       <GridItem>
-        {/* <Center>
-          <Link href={`mailto:${email}`}>
-            <Box
-              as="button"
-              borderRadius="md"
-              bg="brand.600"
-              color="white"
-              px={6}
-              h={10}
-            >
-              <HStack>
-                <Box as={TbBrandGmail} fontSize="2xl" />
-                <Box>{email.toUpperCase()}</Box>
-              </HStack>
-            </Box>
-          </Link>
-        </Center> */}
         <BrandIcon
           name={email}
           icon={<TbBrandGmail color="white" />}
