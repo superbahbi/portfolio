@@ -6,12 +6,12 @@ import Header from "./Components/Header";
 import Content from "./Components/Content";
 import Links from "./Components/Links";
 import Footer from "./Components/Footer";
-
+import BrandIcon from "./Components/BrandIcon";
 import Waves from "./Components/Animation/Waves";
 import FlipCard from "./Components/Animation/Flip/FlipCard";
 
 import projects from "./Data/Projects";
-
+import technology from "./Data/Technology";
 const theme = extendTheme({
   fonts: {
     heading: `'Inconsolata', monospace`,
@@ -61,7 +61,12 @@ const ContentBox = styled(Box)`
     padding-right: 30px;
   }
 `;
-
+const TechBox = styled(Box)`
+  max-width: 960px;
+  @media (max-width: 768px) {
+    max-width: 600px;
+  }
+`;
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -73,7 +78,7 @@ function App() {
         />
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
-            <Text fontSize="2xl">
+            <Text fontSize="xl">
               Hi there,👋 I am Robert Kugler, an aspiring full stack developer,
               💻 currently working in the wine industry as Cellar Master in San
               Luis Obispo. 🔭 I’m currently learning Typescript, React, and
@@ -97,8 +102,8 @@ function App() {
           viewBox="0 0 1440 320"
         />
         <Content id="project" backgroundColor={theme.colors.brand[600]}>
-          <Heading as="h2" size="3xl" color="brand.700" mb={10}>
-            Projects
+          <Heading as="h2" size="xl" color="brand.700" m={10}>
+            PROJECTS
           </Heading>
 
           <ContentGrid>
@@ -119,9 +124,28 @@ function App() {
         </Content>
         <Waves
           theme={theme}
-          backgroundColor="rgba(0, 0, 0, 0)"
+          backgroundColor={theme.colors.brand[700]}
           waveColor={theme.colors.brand[600]}
           data="M0,224L30,208C60,192,120,160,180,170.7C240,181,300,235,360,266.7C420,299,480,309,540,272C600,235,660,149,720,138.7C780,128,840,192,900,181.3C960,171,1020,85,1080,74.7C1140,64,1200,128,1260,170.7C1320,213,1380,235,1410,245.3L1440,256L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+          viewBox="0 0 1440 320"
+        />
+        <Content id="technology" backgroundColor={theme.colors.brand[700]}>
+          <Heading as="h2" size="xl" color="brand.900" m={10}>
+            TECHNOLOGY
+          </Heading>
+          <TechBox>
+            {technology.map((tech, index) => {
+              return (
+                <BrandIcon key={index} name={tech.name} icon={tech.icon} />
+              );
+            })}
+          </TechBox>
+        </Content>
+        <Waves
+          theme={theme}
+          backgroundColor={theme.colors.transparent}
+          waveColor={theme.colors.brand[700]}
+          data="M0,96L120,122.7C240,149,480,203,720,202.7C960,203,1200,149,1320,122.7L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
           viewBox="0 0 1440 320"
         />
         <Footer

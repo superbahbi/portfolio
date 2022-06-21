@@ -8,6 +8,7 @@ const Container = styled(Grid)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 2rem;
+  max-width: 65%;
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
     a {
@@ -25,33 +26,31 @@ const Container = styled(Grid)`
 */
 const Links = ({ email, linkedin, resume }) => {
   return (
-    <Container>
-      <GridItem>
-        <BrandIcon
-          name={email}
-          icon={<TbBrandGmail color="white" />}
-          link={`mailto:${email}`}
-        />
-      </GridItem>
-      <GridItem>
-        <Center>
+    <Center>
+      <Container>
+        <GridItem>
+          <BrandIcon
+            name={email}
+            icon={<TbBrandGmail color="white" />}
+            link={`mailto:${email}`}
+          />
+        </GridItem>
+        <GridItem>
           <BrandIcon
             name={linkedin}
             icon={<TbBrandLinkedin color="white" />}
             link={`https://www.linkedin.com/in/${linkedin}/`}
           />
-        </Center>
-      </GridItem>
-      <GridItem>
-        <Center>
+        </GridItem>
+        <GridItem>
           <BrandIcon
             name="Download resume"
             icon={<TbCloudDownload color="white" />}
             link={resume}
           />
-        </Center>
-      </GridItem>
-    </Container>
+        </GridItem>
+      </Container>
+    </Center>
   );
 };
 

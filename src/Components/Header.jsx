@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import { Text, Stack, Heading } from "@chakra-ui/react";
+import { Text, Stack, Heading, HStack } from "@chakra-ui/react";
+import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
 import Star from "./Animation/Star";
 import Meteor from "./Animation/Meteor";
 import Waves from "./Animation/Waves";
+import BrandIcon from "./BrandIcon";
 
 const typewriter = (width) => keyframes`
   from {
@@ -84,6 +86,9 @@ const HeaderLinks = styled.a`
   }
   margin-left: 12px;
   margin-bottom: auto;
+  :hover {
+    color: ${(props) => props.color};
+  }
 `;
 
 /* Header Components 
@@ -94,13 +99,13 @@ const HeaderLinks = styled.a`
 const Header = ({ theme, name, title }) => {
   useEffect(() => {
     const [red, green, blue] = [255, 255, 255];
-    const section = document.querySelector("#header");
+    const header = document.querySelector("#header");
 
     window.addEventListener("scroll", () => {
       let y = 1 + (window.scrollY || window.pageYOffset) / 250;
       y = y < 1 ? 1 : y; // ensure y is always >= 1 (due to Safari's elastic scroll)
       const [r, g, b] = [red / y, green / y, blue / y].map(Math.round);
-      section.style.color = `rgb(${r}, ${g}, ${b})`;
+      header.style.color = `rgb(${r}, ${g}, ${b})`;
     });
   }, []);
   return (
@@ -110,11 +115,23 @@ const Header = ({ theme, name, title }) => {
       <Navbar>
         <HeaderContainer id="header">
           <HeaderLogo>
-            <img src="./rk-logo-256.png" width={64} height={64} alt="logo" />
+            <img
+              src="./rk-logo-256.png"
+              width={64}
+              height={64}
+              alt="logo"
+              href="#"
+            />
           </HeaderLogo>
-          <HeaderLinks href="#about">About</HeaderLinks>
-          <HeaderLinks href="#project">Project</HeaderLinks>
-          <HeaderLinks href="#contact">Contact</HeaderLinks>
+          <HeaderLinks color={theme.colors.brand[600]} href="#about">
+            About
+          </HeaderLinks>
+          <HeaderLinks color={theme.colors.brand[600]} href="#project">
+            Project
+          </HeaderLinks>
+          <HeaderLinks color={theme.colors.brand[600]} href="#technology">
+            Technology
+          </HeaderLinks>
         </HeaderContainer>
       </Navbar>
       <InnerHeaderContainer>
@@ -126,9 +143,23 @@ const Header = ({ theme, name, title }) => {
           >
             {name}
           </InnerHeaderText>
-          <Text fontSize="2xl" color="brand.700">
+          <Text fontSize="2xl" color="brand.700" textAlign="left">
             {title}
           </Text>
+          <HStack>
+            <BrandIcon
+              name="Download resume"
+              icon={<TbCloudDownload color="white" />}
+              link={
+                "https://user.fm/files/v2-300f28f8385972fb6f887614d0c6ec72/Robert_Kugler%20IV_Resume.pdf"
+              }
+            />
+            <BrandIcon
+              name={"superbahbi@gmail.com"}
+              icon={<TbBrandGmail color="white" />}
+              link={`mailto:superbahbi@gmail.com`}
+            />
+          </HStack>
         </Stack>
       </InnerHeaderContainer>
       <Waves
