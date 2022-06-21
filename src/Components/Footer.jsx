@@ -19,21 +19,21 @@ const FooterContainer = styled.div`
   );
   color: white;
 `;
-{
-  /* Footer Components
+
+/* Footer Components
   @params {theme.color} color - first color theme of the footer background gradient
   @params {theme.color} color2 - second color theme of the footer background gradient
   @params {int} year - current year
   @params {string} name - name of the developer
 */
-}
+
 const Footer = ({ color, color2, year, name }) => {
   return (
     <FooterContainer color={color} color2={color2} backgroundColor="brand.700">
       <Star amount={300} />
       <FloatingRocket />
       <Text>
-        © Copyright {year} {name}
+        Made with ❤️ {name} {year}
       </Text>
     </FooterContainer>
   );
