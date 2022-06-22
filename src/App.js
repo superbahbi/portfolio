@@ -89,7 +89,7 @@ function App() {
             <Links
               email="superbahbi@gmail.com"
               linkedin="robertleekugler"
-              resume="https://user.fm/files/v2-300f28f8385972fb6f887614d0c6ec72/Robert_Kugler%20IV_Resume.pdf"
+              resume="https://user.fm/files/v2-7c60b3ccbcf28794331fa7c999b0f530/Robert_Kugler_Resume.pdf"
             />
           </ContentBox>
         </Content>
