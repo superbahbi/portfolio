@@ -79,11 +79,11 @@ function App() {
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="xl">
-              Hi there,👋 I am Robert Kugler, an aspiring full stack developer,
-              💻 currently working in the wine industry as Cellar Master in San
-              Luis Obispo. 🔭 I’m currently learning Typescript, React, and
-              React Native. 🌱 You can see my some of my projects on my github
-              repositories. 🌐 You can reach me using the links below. 📫
+              Hi there,👋 I am an aspiring full-stack developer, 💻 currently
+              working in the wine industry as Cellar Master in San Luis Obispo.
+              🔭 I’m currently learning Typescript, React, and React Native. 🌱
+              You can see some of my projects on my GitHub repositories. 🌐 You
+              can reach me using the links below. 📫
             </Text>
 
             <Links
@@ -131,7 +131,7 @@ function App() {
         />
         <Content id="technology" backgroundColor={theme.colors.brand[700]}>
           <Heading as="h2" size="xl" color="brand.900" m={10}>
-            TECHNOLOGY
+            TECHNOLOGIES & TOOLS
           </Heading>
           <TechBox>
             {technology.map((tech, index) => {

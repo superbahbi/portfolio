@@ -16,6 +16,7 @@ import {
   SiStripe,
   SiJavascript,
   SiGit,
+  SiBootstrap,
 } from "react-icons/si";
 const technology = [
   {
@@ -81,6 +82,10 @@ const technology = [
   {
     name: "Spotify API",
     icon: <SiSpotify color="white" />,
+  },
+  {
+    name: "Bootstrap",
+    icon: <SiBootstrap color="white" />,
   },
   {
     name: "Chakra UI",
