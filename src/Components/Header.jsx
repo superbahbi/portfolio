@@ -148,14 +148,14 @@ const Header = ({ theme, name, title }) => {
           </Text>
           <HStack>
             <BrandIcon
-              name="Download resume"
+              name="Resume"
               icon={<TbCloudDownload color="white" />}
               link={
                 "https://user.fm/files/v2-300f28f8385972fb6f887614d0c6ec72/Robert_Kugler%20IV_Resume.pdf"
               }
             />
             <BrandIcon
-              name={"superbahbi@gmail.com"}
+              name="Email"
               icon={<TbBrandGmail color="white" />}
               link={`mailto:superbahbi@gmail.com`}
             />
