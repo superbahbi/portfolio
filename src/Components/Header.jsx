@@ -151,7 +151,7 @@ const Header = ({ theme, name, title }) => {
               name="Resume"
               icon={<TbCloudDownload color="white" />}
               link={
-                "https://user.fm/files/v2-300f28f8385972fb6f887614d0c6ec72/Robert_Kugler%20IV_Resume.pdf"
+                "https://user.fm/files/v2-62290ca2e7d396ecb25e45ca882087e9/Robert_Kugler_Resume.pdf"
               }
             />
             <BrandIcon

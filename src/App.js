@@ -79,17 +79,17 @@ function App() {
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="xl">
-              Hi there,👋 I am an aspiring full-stack developer, 💻 currently
-              working in the wine industry as Cellar Master in San Luis Obispo.
-              🔭 I’m currently learning Typescript, React, and React Native. 🌱
-              You can see some of my projects on my GitHub repositories. 🌐 You
-              can reach me using the links below. 📫
+              Hi there,👋 I am an full-stack developer, 💻 currently working in
+              the wine industry as Cellar Master in San Luis Obispo. 🔭 I’m
+              currently learning Typescript, React, and React Native. 🌱 You can
+              see some of my projects on my GitHub repositories. 🌐 You can
+              reach me using the links below. 📫
             </Text>
 
             <Links
               email="superbahbi@gmail.com"
               linkedin="robertleekugler"
-              resume="https://user.fm/files/v2-7c60b3ccbcf28794331fa7c999b0f530/Robert_Kugler_Resume.pdf"
+              resume="https://user.fm/files/v2-62290ca2e7d396ecb25e45ca882087e9/Robert_Kugler_Resume.pdf"
             />
           </ContentBox>
         </Content>
