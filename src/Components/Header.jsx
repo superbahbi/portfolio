@@ -1,9 +1,9 @@
+import { Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { TbBrandGmail, TbCloudDownload } from "react-icons/tb";
 import styled, { keyframes } from "styled-components";
-import { Text, Stack, Heading, HStack } from "@chakra-ui/react";
-import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
-import Star from "./Animation/Star";
 import Meteor from "./Animation/Meteor";
+import Star from "./Animation/Star";
 import Waves from "./Animation/Waves";
 import BrandIcon from "./BrandIcon";
 

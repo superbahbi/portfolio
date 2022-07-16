@@ -1,14 +1,20 @@
+import {
+  Box,
+  ChakraProvider,
+  extendTheme,
+  Grid,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
-import { extendTheme, ChakraProvider } from "@chakra-ui/react";
-import { Text, Box, Grid, Heading } from "@chakra-ui/react";
 import styled from "styled-components";
-import Header from "./Components/Header";
-import Content from "./Components/Content";
-import Links from "./Components/Links";
-import Footer from "./Components/Footer";
-import BrandIcon from "./Components/BrandIcon";
-import Waves from "./Components/Animation/Waves";
 import FlipCard from "./Components/Animation/Flip/FlipCard";
+import Waves from "./Components/Animation/Waves";
+import BrandIcon from "./Components/BrandIcon";
+import Content from "./Components/Content";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Links from "./Components/Links";
 
 import projects from "./Data/Projects";
 import technology from "./Data/Technology";

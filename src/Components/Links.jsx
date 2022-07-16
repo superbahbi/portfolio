@@ -1,7 +1,7 @@
+import { Center, Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
-import styled from "styled-components";
 import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
-import { Grid, GridItem, Center } from "@chakra-ui/react";
+import styled from "styled-components";
 import BrandIcon from "./BrandIcon";
 
 const Container = styled(Grid)`

@@ -1,5 +1,5 @@
-import React from "react";
 import { Center, Image } from "@chakra-ui/react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 import RocketBase from "../../Assets/rocketbase.png";
 const floating = keyframes`

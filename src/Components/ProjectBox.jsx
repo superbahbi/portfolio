@@ -1,6 +1,5 @@
+import { Box, Center, Image, Link } from "@chakra-ui/react";
 import React from "react";
-import { Box, Image, Center, Link } from "@chakra-ui/react";
-
 import BrandIcon from "./BrandIcon";
 const ProjectBox = ({
   projectImg,
