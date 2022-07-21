@@ -132,8 +132,8 @@ const projects = [
     ],
     projectDescription:
       "A wine flash store built in react native framework using firebase auth, real time database, and storage.",
-    demoLink: "https://github.com/superbahbi/corkify",
-    codeLink: "https://expo.dev/@superbahbi/Corkify",
+    demoLink: "https://expo.dev/@superbahbi/Corkify",
+    codeLink: "https://github.com/superbahbi/corkify",
   },
   {
     projectImg: portfolioImage,
