@@ -96,7 +96,7 @@ const HeaderLinks = styled.a`
   @params {string} name - developer name
   @params {string} title - developer title
 */
-const Header = ({ theme, name, title }) => {
+const Header = ({ theme, name, title, resumeLink, email }) => {
   useEffect(() => {
     const [red, green, blue] = [255, 255, 255];
     const header = document.querySelector("#header");
@@ -150,14 +150,12 @@ const Header = ({ theme, name, title }) => {
             <BrandIcon
               name="Resume"
               icon={<TbCloudDownload color="white" />}
-              link={
-                "https://user.fm/files/v2-62290ca2e7d396ecb25e45ca882087e9/Robert_Kugler_Resume.pdf"
-              }
+              link={resumeLink}
             />
             <BrandIcon
               name="Email"
               icon={<TbBrandGmail color="white" />}
-              link={`mailto:superbahbi@gmail.com`}
+              link={`mailto:` + email}
             />
           </HStack>
         </Stack>

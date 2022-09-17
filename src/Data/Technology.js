@@ -17,6 +17,12 @@ import {
   SiJavascript,
   SiGit,
   SiBootstrap,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiTypescript,
+  SiPostgresql,
+  SiEslint,
+  SiWebpack,
 } from "react-icons/si";
 const technology = [
   {
@@ -32,12 +38,21 @@ const technology = [
     icon: <SiJavascript color="white" />,
   },
   {
+    name: "TypeScript",
+    icon: <SiTypescript color="white" />,
+  },
+  {
     name: "Git",
     icon: <SiGit color="white" />,
   },
+
   {
     name: "React",
     icon: <SiReact color="white" />,
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs color="white" />,
   },
   {
     name: "React Router",
@@ -58,6 +73,10 @@ const technology = [
   {
     name: "Nodejs",
     icon: <SiNodedotjs color="white" />,
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql color="white" />,
   },
   {
     name: "MongoDB",
@@ -94,6 +113,19 @@ const technology = [
   {
     name: "Styled Components",
     icon: <SiStyledcomponents color="white" />,
+  },
+
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss color="white" />,
+  },
+  {
+    name: "EsLint",
+    icon: <SiEslint color="white" />,
+  },
+  {
+    name: "Webpack",
+    icon: <SiWebpack color="white" />,
   },
 ];
 

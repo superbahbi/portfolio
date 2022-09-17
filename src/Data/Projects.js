@@ -25,9 +25,11 @@ import {
   SiPassport,
   SiFirebase,
   SiStripe,
+  SiTypescript,
 } from "react-icons/si";
 const projects = [
   {
+    id: 0,
     projectImg: twitterCloneAppImage,
     projectTitle: "Twitter Clone App",
     projectStack: [
@@ -40,12 +42,14 @@ const projects = [
     codeLink: "https://github.com/superbahbi/twitter-clone-app",
   },
   {
+    id: 1,
     projectImg: twitterCloneWebImage,
     projectTitle: "Twitter Clone Web",
     projectStack: [
       { name: "Reactjs", icon: <SiReact color="white" /> },
-      { name: "CSS3", icon: <SiCss3 color="white" /> },
+      { name: "Typescript", icon: <SiTypescript color="white" /> },
       { name: "HTML5", icon: <SiHtml5 color="white" /> },
+      { name: "CSS3", icon: <SiCss3 color="white" /> },
       { name: "React Router", icon: <SiReactrouter color="white" /> },
       { name: "Socket.io", icon: <SiSocketdotio color="white" /> },
       { name: "Styled Components", icon: <SiStyledcomponents color="white" /> },
@@ -56,6 +60,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/twitter-clone-web",
   },
   {
+    id: 2,
     projectImg: twitterCloneServerImage,
     projectTitle: "Twitter Clone Server",
     projectStack: [
@@ -71,6 +76,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/twitter-clone-server",
   },
   {
+    id: 3,
     projectImg: wordleImage,
     projectTitle: "Wordle",
     projectStack: [
@@ -83,6 +89,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/wordle",
   },
   {
+    id: 4,
     projectImg: memoryGameImage,
     projectTitle: "Memory Game",
     projectStack: [
@@ -95,6 +102,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/barbarian-memory",
   },
   {
+    id: 5,
     projectImg: ticTacToeImage,
     projectTitle: "Tic Tac Toe Online",
     projectStack: [
@@ -109,6 +117,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/tictactoe-online",
   },
   {
+    id: 6,
     projectImg: discoverifyImage,
     projectTitle: "Discoverify",
     projectStack: [
@@ -122,6 +131,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/discoverify",
   },
   {
+    id: 7,
     projectImg: corkifyImage,
     projectTitle: "Corkify",
     projectStack: [
@@ -136,6 +146,7 @@ const projects = [
     codeLink: "https://github.com/superbahbi/corkify",
   },
   {
+    id: 8,
     projectImg: portfolioImage,
     projectTitle: "Portfolio",
     projectStack: [

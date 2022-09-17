@@ -74,6 +74,10 @@ const TechBox = styled(Box)`
   }
 `;
 function App() {
+  const resumeLink =
+    "https://user.fm/files/v2-370050f28b0b6ed363ec702bb53264e9/Robert_Kugler_Resume.pdf";
+  const linkedin = "robertleekugler";
+  const email = "superbahbi@gmail.com";
   return (
     <ChakraProvider theme={theme}>
       <Container color={theme.colors.black} color2={theme.colors.brand[900]}>
@@ -81,6 +85,8 @@ function App() {
           theme={theme}
           name="Robert Kugler"
           title="Full Stack Software Developer"
+          resumeLink={resumeLink}
+          email={email}
         />
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
@@ -91,12 +97,7 @@ function App() {
               see some of my projects on my GitHub repositories. 🌐 You can
               reach me using the links below. 📫
             </Text>
-
-            <Links
-              email="superbahbi@gmail.com"
-              linkedin="robertleekugler"
-              resume="https://user.fm/files/v2-62290ca2e7d396ecb25e45ca882087e9/Robert_Kugler_Resume.pdf"
-            />
+            <Links email={email} linkedin={linkedin} resume={resumeLink} />
           </ContentBox>
         </Content>
 
