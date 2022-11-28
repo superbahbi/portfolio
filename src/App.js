@@ -106,11 +106,11 @@ function App() {
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="xl">
-              Hi there,👋 I am an full-stack developer, 💻 currently working in
-              the wine industry as Cellar Master in San Luis Obispo. 🔭 I’m
-              currently learning Typescript, React, and React Native. 🌱 You can
-              see some of my projects on my GitHub repositories. 🌐 You can
-              reach me using the links below. 📫
+              Hi there,👋 I am Robert Kugler, 💻 currently working in as a
+              full-stack software engineer in San Luis Obispo. 🔭 I’m currently
+              learning Typescript, React, and React Native. 🌱 You can see some
+              of my projects on my GitHub repositories. 🌐 You can reach me
+              using the links below. 📫
             </Text>
             <Links email={email} linkedin={linkedin} resume={resumeLink} />
           </ContentBox>
