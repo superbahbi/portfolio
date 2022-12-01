@@ -99,7 +99,7 @@ function App() {
         <Header
           theme={theme}
           name="Robert Kugler"
-          title="Full Stack Software Developer"
+          title="Full Stack Software Engineer"
           resumeLink={resumeLink}
           email={email}
         />
