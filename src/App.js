@@ -43,6 +43,7 @@ const theme = extendTheme({
       700: "#e9eef2", // light grey
       600: "#e65c4f", // red
       500: "#9f9f9f", // grey
+      400: "#212427", // drak grey
     },
   },
 });
@@ -105,7 +106,7 @@ function App() {
         />
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
-            <Text fontSize="xl">
+            <Text fontSize="xl" color={theme.colors.brand[400]}>
               Hi, my name is Robert Kugler, and I'm a full-stack software
               engineer based in San Luis Obispo, California. I'm currently
               learning Typescript, React, and React Native, and am actively
