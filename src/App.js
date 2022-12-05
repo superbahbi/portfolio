@@ -106,11 +106,15 @@ function App() {
         <Content id="about" backgroundColor={theme.colors.brand[700]}>
           <ContentBox maxW="960px" mx="auto" mt={20} mb={20}>
             <Text fontSize="xl">
-              Hi there,👋 I am Robert Kugler, 💻 currently working in as a
-              full-stack software engineer in San Luis Obispo. 🔭 I’m currently
-              learning Typescript, React, and React Native. 🌱 You can see some
-              of my projects on my GitHub repositories. 🌐 You can reach me
-              using the links below. 📫
+              Hi, my name is Robert Kugler, and I'm a full-stack software
+              engineer based in San Luis Obispo, California. I'm currently
+              learning Typescript, React, and React Native, and am actively
+              updating my GitHub repositories with the projects I'm developing.
+              If you have any questions, feel free to reach out to me through
+              the links provided below. I'm passionate about continuing to
+              expand my knowledge and abilities in software engineering and am
+              looking forward to the opportunities that I can provide for
+              others.
             </Text>
             <Links email={email} linkedin={linkedin} resume={resumeLink} />
           </ContentBox>
