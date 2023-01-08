@@ -24,6 +24,7 @@ import {
   SiEslint,
   SiWebpack,
   SiAngular,
+  SiMysql,
 } from "react-icons/si";
 const technology = [
   {
@@ -76,6 +77,7 @@ const technology = [
     name: "Nodejs",
     icon: <SiNodedotjs color="white" />,
   },
+  { name: "MySQL", icon: <SiMysql color="white" /> },
   {
     name: "PostgreSQL",
     icon: <SiPostgresql color="white" />,
