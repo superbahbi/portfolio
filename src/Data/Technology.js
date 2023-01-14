@@ -23,6 +23,7 @@ import {
   SiPostgresql,
   SiEslint,
   SiWebpack,
+  SiAngular,
 } from "react-icons/si";
 const technology = [
   {
@@ -66,6 +67,7 @@ const technology = [
     name: "Expo",
     icon: <SiExpo color="white" />,
   },
+  { name: "Angular", icon: <SiAngular color="white" /> },
   {
     name: "Express",
     icon: <SiExpress color="white" />,
