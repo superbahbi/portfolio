@@ -17,6 +17,7 @@ const BrandIcon = ({ name, icon, link }) => {
         cursor: "pointer",
       }}
       href={link ? link : null}
+      target={link ? "_blank" : "_self"}
     >
       <BrandBox
         bg="brand.900"

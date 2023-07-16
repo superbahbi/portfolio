@@ -1,29 +1,11 @@
-import { Heading, HStack, Stack, Text } from "@chakra-ui/react";
+import { Heading, HStack, Stack, Center, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { TbBrandGmail, TbCloudDownload } from "react-icons/tb";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Meteor from "./Animation/Meteor";
 import Star from "./Animation/Star";
 import Waves from "./Animation/Waves";
 import BrandIcon from "./BrandIcon";
-
-const typewriter = (width) => keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: ${width};
-  }
-`;
-
-const blinkCursor = keyframes`
-  from {
-    border-right-color: white;
-  }
-  to {
-    border-right-color: transparent;
-  }
-`;
 
 const InnerHeaderContainer = styled.div`
   display: flex;
@@ -38,21 +20,6 @@ const InnerHeaderContainer = styled.div`
   margin: 0;
   padding: 0;
   margin-top: 2rem;
-  .animation {
-    animation: ${typewriter("258px")} 3.5s steps(13) 1s 1 normal both,
-      ${blinkCursor} 900ms steps(13) infinite normal;
-    @media (max-width: 768px) {
-      animation: ${typewriter("235px")} 3.5s steps(13) 1s 1 normal both,
-        ${blinkCursor} 900ms steps(13) infinite normal;
-    }
-  }
-`;
-
-const InnerHeaderText = styled(Heading)`
-  border-right: 2px solid white;
-  white-space: nowrap;
-  overflow: hidden;
-  font-weight: 300;
 `;
 
 const Navbar = styled.div`
@@ -136,28 +103,31 @@ const Header = ({ theme, name, title, resumeLink, email }) => {
       </Navbar>
       <InnerHeaderContainer>
         <Stack>
-          <InnerHeaderText
-            fontWeight="100"
-            className="animation"
+          <Heading
+            fontSize="4xl"
             color="brand.700"
+            fontWeight={100}
+            textAlign="center"
           >
             {name}
-          </InnerHeaderText>
-          <Text fontSize="2xl" color="brand.700" textAlign="left">
+          </Heading>
+          <Text fontSize="2xl" color="brand.700" textAlign="center">
             {title}
           </Text>
-          <HStack>
-            <BrandIcon
-              name="Resume"
-              icon={<TbCloudDownload color="white" />}
-              link={resumeLink}
-            />
-            <BrandIcon
-              name="Email"
-              icon={<TbBrandGmail color="white" />}
-              link={`mailto:` + email}
-            />
-          </HStack>
+          <Center>
+            <HStack>
+              <BrandIcon
+                name="Resume"
+                icon={<TbCloudDownload color="white" />}
+                link={resumeLink}
+              />
+              <BrandIcon
+                name="Email"
+                icon={<TbBrandGmail color="white" />}
+                link={`mailto:` + email}
+              />
+            </HStack>
+          </Center>
         </Stack>
       </InnerHeaderContainer>
       <Waves
