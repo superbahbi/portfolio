@@ -77,7 +77,7 @@ const TechBox = styled(Box)`
 function App() {
   const finalRef = React.useRef(null);
   const resumeLink =
-    "https://user.fm/files/v2-370050f28b0b6ed363ec702bb53264e9/Robert_Kugler_Resume.pdf";
+    "https://user.fm/files/v2-22603ccf3ccacce1889f78df895d2b84/Robert_Kugler_Resume.pdf";
   const linkedin = "robertleekugler";
   const email = "superbahbi@gmail.com";
   return (
