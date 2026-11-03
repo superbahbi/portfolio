@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders the new profile name and about copy", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(screen.getByText("Bobby Lee")).toBeInTheDocument();
+  expect(screen.getByText(/full-time wanderer/i)).toBeInTheDocument();
+});
+
+test("no longer exposes the old name or resume link", () => {
+  render(<App />);
+
+  expect(screen.queryByText(/Robert Kugler/i)).not.toBeInTheDocument();
+  expect(screen.queryByText(/resume/i)).not.toBeInTheDocument();
 });

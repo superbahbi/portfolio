@@ -1,54 +1,34 @@
-import { Center, Grid, GridItem } from "@chakra-ui/react";
+import { Center, Grid } from "@chakra-ui/react";
 import React from "react";
-import { TbBrandGmail, TbBrandLinkedin, TbCloudDownload } from "react-icons/tb";
 import styled from "styled-components";
+import profile from "../Data/Profile";
 import BrandIcon from "./BrandIcon";
 
 const Container = styled(Grid)`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   padding-top: 2rem;
   max-width: 65%;
   @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
-    a {
-      padding-bottom: 1rem;
-    }
-  }
-  a {
-    padding-left: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 `;
-/* Links Components
-  @params {string} email - email address
-  @params {string} linkedin - linkedin username
-  @params {string} resume - url of the resume
-*/
-const Links = ({ email, linkedin, resume }) => {
+
+const Links = () => {
   return (
     <Center>
       <Container>
-        <GridItem>
+        {profile.links.map((link) => (
           <BrandIcon
-            name={email}
-            icon={<TbBrandGmail color="white" />}
-            link={`mailto:${email}`}
+            key={link.label}
+            name={link.label}
+            Icon={link.Icon}
+            href={link.href}
           />
-        </GridItem>
-        <GridItem>
-          <BrandIcon
-            name={linkedin}
-            icon={<TbBrandLinkedin color="white" />}
-            link={`https://www.linkedin.com/in/${linkedin}/`}
-          />
-        </GridItem>
-        <GridItem>
-          <BrandIcon
-            name="Download resume"
-            icon={<TbCloudDownload color="white" />}
-            link={resume}
-          />
-        </GridItem>
+        ))}
       </Container>
     </Center>
   );

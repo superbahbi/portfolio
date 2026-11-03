@@ -6,40 +6,44 @@ const BrandBox = styled(Box)`
   display: inline-flex;
   height: 25px;
   width: auto;
-  .hover {
-  }
 `;
-const BrandIcon = ({ name, icon, link }) => {
+
+const BrandIcon = ({ name, Icon, href }) => {
+  const chip = (
+    <BrandBox
+      bg="brand.900"
+      _hover={href ? { backgroundColor: "brand.800" } : undefined}
+      p="1rem"
+      m="0.15rem"
+    >
+      <HStack>
+        {Icon && <Icon color="white" />}
+        <Text
+          fontFamily="mono"
+          fontWeight="bold"
+          fontSize="10px"
+          letterSpacing="0.08rem"
+          textTransform="uppercase"
+          ml={"1 !important"}
+          color="white"
+        >
+          {name}
+        </Text>
+      </HStack>
+    </BrandBox>
+  );
+
+  if (!href) {
+    return chip;
+  }
+
   return (
     <Link
-      style={{
-        textDecoration: "none",
-        cursor: "pointer",
-      }}
-      href={link ? link : null}
-      target={link ? "_blank" : "_self"}
+      style={{ textDecoration: "none", cursor: "pointer" }}
+      href={href}
+      isExternal
     >
-      <BrandBox
-        bg="brand.900"
-        _hover={{ backgroundColor: "brand.800" }}
-        p="1rem"
-        m="0.15rem"
-      >
-        <HStack>
-          {icon}
-          <Text
-            fontFamily="mono"
-            fontWeight="bold"
-            fontSize="10px"
-            letterSpacing="0.08rem"
-            textTransform="uppercase"
-            ml={"1 !important"}
-            color="white"
-          >
-            {name}
-          </Text>
-        </HStack>
-      </BrandBox>
+      {chip}
     </Link>
   );
 };

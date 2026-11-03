@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
+import { createStarField, starFieldToShadow } from "../../lib/sky";
 
 const StyledStar = styled.div`
   width: 1px;
@@ -8,23 +9,13 @@ const StyledStar = styled.div`
   box-shadow: ${(props) => props.starShadowBox};
 `;
 
-const Star = ({ amount }) => {
-  let colors = ["#fffcfa", "#faf0e6", "#f5d0a9", "#fcf990"];
-  let starShadowBox = "";
-  for (let i = 1; i < amount + 1; i += 1) {
-    let x = Math.floor(Math.random() * 2820 + 1);
-    let y = Math.floor(Math.random() * 1235 + 1);
-    let size = Math.floor(Math.random() * 10 + 1);
-    let colorIndex = Math.floor(Math.random() * 4);
-    starShadowBox += `${x}px ${y}px 1px .${size}px ${colors[colorIndex]}${
-      i === amount ? ";" : ", "
-    } `;
-  }
-  return (
-    <>
-      <StyledStar starShadowBox={starShadowBox} />
-    </>
+const Star = ({ amount = 100, seed = 1 }) => {
+  const starShadowBox = useMemo(
+    () => starFieldToShadow(createStarField(amount, seed)),
+    [amount, seed],
   );
+
+  return <StyledStar starShadowBox={starShadowBox} />;
 };
 
 export default Star;

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled, { keyframes } from "styled-components";
+import { createMeteorField } from "../../lib/sky";
+
 const meteor = keyframes`
 0% {
   opacity: 1;
@@ -18,6 +20,7 @@ const meteor = keyframes`
   opacity: 0;
 }
 `;
+
 const StyledMeteor = styled.div`
   ${(props) => props.loading && "display: none;"}
   position: absolute;
@@ -48,21 +51,24 @@ const StyledMeteor = styled.div`
     box-shadow: 0 0 15px 3px #fff;
   }
 `;
-const Meteor = ({ amount }) => {
-  let numOfMeteors = new Array(amount).fill();
+
+const Meteor = ({ amount = 10, seed = 1 }) => {
+  const meteors = useMemo(
+    () => createMeteorField(amount, seed),
+    [amount, seed],
+  );
+
   return (
     <>
-      {numOfMeteors.map((_, i) => {
-        return (
-          <StyledMeteor
-            key={i}
-            className="Meteor"
-            delay={Math.floor((Math.random() * 15 + 3) * 100) / 100}
-            vertical={Math.floor(Math.random() * 90 + 9)}
-            horizontal={Math.floor(Math.random() * 250 + 50)}
-          />
-        );
-      })}
+      {meteors.map((meteorConfig, index) => (
+        <StyledMeteor
+          key={index}
+          className="Meteor"
+          delay={meteorConfig.delay}
+          vertical={meteorConfig.vertical}
+          horizontal={meteorConfig.horizontal}
+        />
+      ))}
     </>
   );
 };

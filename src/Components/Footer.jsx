@@ -1,8 +1,12 @@
 import { Text } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
+import profile from "../Data/Profile";
+import theme from "../theme";
 import FloatingRocket from "./Animation/FloatingRocket";
 import Star from "./Animation/Star";
+import Links from "./Links";
+
 const FooterContainer = styled.div`
   position: relative;
   text-align: center;
@@ -20,20 +24,14 @@ const FooterContainer = styled.div`
   color: white;
 `;
 
-/* Footer Components
-  @params {theme.color} color - first color theme of the footer background gradient
-  @params {theme.color} color2 - second color theme of the footer background gradient
-  @params {int} year - current year
-  @params {string} name - name of the developer
-*/
-
-const Footer = ({ color, color2, year, name }) => {
+const Footer = () => {
   return (
-    <FooterContainer color={color} color2={color2} backgroundColor="brand.700">
-      <Star amount={300} />
+    <FooterContainer color={theme.colors.black} color2={theme.colors.brand[900]}>
+      <Star amount={300} seed={13} />
       <FloatingRocket />
+      <Links />
       <Text>
-        Made with ❤️ {name} {year}
+        Made with ❤️ {profile.name} {new Date().getFullYear()}
       </Text>
     </FooterContainer>
   );
